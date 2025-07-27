@@ -3,22 +3,26 @@ version: 2
 sources:
   - name: stg_airport
     schema: stg
-    description: Source schema containing airport data
     tables:
       - name: airports_data
-        description: >
-          Source table containing internal airport data including names in multiple languages,
-          geographic coordinates, and update timestamps.
-        columns:
-          - name: airport_code
-            description: Unique airport code
-          - name: airport_name
-            description: containing names in multiple languages
-          - name: city
-            description: containing city names in multiple languages
-          - name: coordinates
-            description: Point data representing geographic location
-          - name: timezone
-            description: Timezone of the airport
-          - name: last_update
-            description: Timestamp when the record was last updated
+      - name: aircrafts_data
+      - name: seats
+
+
+models:
+    - name: dim_airport
+      description: "airports data table"
+      columns:
+        - name: airport_code
+          description: "Unique IATA airport code"
+          data_test:
+            - unique
+            - not_null
+    - name: dim_aircraft
+      description: "aircrafts data table"
+      columns:
+        - name: aircraft_code
+          description: "Unique aircraft code"
+          data_test:
+            - unique
+            - not_null
