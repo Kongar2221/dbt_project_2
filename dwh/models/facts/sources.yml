@@ -1,4 +1,13 @@
 version: 2
+models:
+  - name: fact_flights
+    description: "Fact table containing flight information"
+    columns:
+      - name: flight_id
+        description: "Unique identifier"
+        data_test:
+         - name: not_null
+         - name: unique
 
 sources:
   - name: stg
