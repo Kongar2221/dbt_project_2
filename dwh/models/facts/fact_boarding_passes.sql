@@ -2,10 +2,7 @@
   config(
     materialized = 'incremental',
     unique_key   = ['ticket_no','flight_id','boarding_no'],
-    post_hook    = [
-      '{{ manual_refresh(this) }}',
-      '{{ log_model("end") }}'
-    ]
+    post_hook    = ['{{ manual_refresh(this) }}', '{{ log_model("end") }}']
   )
 }}
 with stg as (
