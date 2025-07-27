@@ -1,34 +1,35 @@
-📦 **DBT_Project_2**
+🎬 **DBT_Project_2 Analytics Pipeline**
 
-> A full-stack dbt analytics pipeline transforming raw warehouse data into clean, BI-ready tables.
-
----
-
-### 🛠 Tech Stack
-
-- 🐍 **Python 3.8+** – for scripting & packages  
-- 🐘 **Data Warehouse** – PostgreSQL / Snowflake / BigQuery / Redshift  
-- 🐉 **dbt Core** – SQL transformation framework  
-- 💻 **VS Code** – development IDE  
-- 🔧 **DBeaver** – database browsing & ad-hoc SQL  
-- 🔗 **Git & GitHub** – version control & collaboration  
+A full-stack dbt analytics pipeline transforming raw warehouse data into clean, BI-ready tables.  
+Demonstrates a workflow using DBeaver, Supabase, dbt, and VS Code, with optional Power BI integration and GitHub deployment.
 
 ---
 
-### 📂 Project Structure
+### 🛠️ Tech Stack
 
+- 🐘 **PostgreSQL via Supabase**  
+- 🐉 **dbt (Data Build Tool)** for data modeling & transformation  
+- 💻 **VS Code** for development  
+- 🛠️ **DBeaver** for ad-hoc SQL & database browsing  
+- 🔗 **Git & GitHub** for version control  
+- 📊 **(Optional) Power BI** for dashboard visualizations  
+
+---
+
+### 📁 Project Structure
+
+```text
 DBT_Project_2/
-├── analyses/ # Ad-hoc exploration & notebooks
-├── data/ # Seed CSVs for static lookup tables
-├── macros/ # Reusable SQL snippets & jinja macros
+├── dbt_project.yml        # dbt project configuration
+├── profiles.yml.example   # example dbt profiles.yml
 ├── models/
-│ ├── staging/ # 1_raw → 2_staging: clean & standardize source tables
-│ ├── core/ # business logic & canonical entities
-│ └── marts/ # final reporting tables for BI consumers
-├── snapshots/ # SCD snapshots for historical tracking
-├── tests/ # custom schema & data tests
-├── dbt_project.yml # dbt configuration
-├── profiles.yml.example # example connection profiles
-├── requirements.txt # Python dependencies
-└── README.md # this file
-
+│   ├── staging/           # clean & standardize raw tables
+│   └── marts/             # business logic & final reporting tables
+├── snapshots/             # SCD snapshots for historical tracking
+├── data/                  # seed CSVs for static lookup tables
+├── macros/                # reusable SQL snippets & Jinja macros
+├── analyses/              # ad-hoc analysis & exploration SQL
+├── tests/                 # custom schema & data tests
+├── requirements.txt       # Python dependencies
+├── .gitignore             # files & folders to ignore
+└── README.md              # this file
